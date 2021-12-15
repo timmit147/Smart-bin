@@ -25,6 +25,7 @@ msg.rate = 0.7;
 var plastic = 0;
 var bread = 0;
 var paper = 0;
+const plasticWait = true;
 
 var transcript = "test";
 
@@ -218,13 +219,26 @@ document.getElementById('paper').onclick = function(){
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
             
+function delay(time) {
+  return new Promise(resolve => setTimeout(resolve, time));
+}
+		
+	if (plasticWait == true){
+		
             if(prediction[1].probability.toFixed(2) > 0.8){
                 console.log("bottle 80 more");
 		plastic = plastic + 1;
 		msg.text = "hallo plastic "+ plastic;
 		window.speechSynthesis.speak(msg);
-		sleep(1000);
+		plasticWait = false;
+		    await delay(1000);
+		    plasticWait = true;
             }
+	}
+		
+	
+		
+		
         }
     }
     
