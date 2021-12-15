@@ -222,7 +222,8 @@ document.getElementById('paper').onclick = function(){
                 console.log("bottle 80 more");
 		plastic = plastic + 1;
 		msg.text = "hallo plastic "+ plastic;
-		window.speechSynthesis.speak(msg);    
+		window.speechSynthesis.speak(msg);
+		sleep(1000);
             }
         }
     }
