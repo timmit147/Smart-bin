@@ -1,11 +1,39 @@
-<div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
+
+
+<div class="testing">
+	<div>Teachable Machine Image Model</div>
 	<button id="start">Start</button>
 	<button id="plastic">plastic +1</button>
 	<button id="bread">bread +1</button>
 	<button id="paper">paper +1</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
+
+</div>
+
+<style type="text/css">
+	
+	.testing{
+		display: none;
+	}
+
+	#addItem {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 6vw;
+		}
+
+</style>
+
+<button type="button" onclick="init()">Start</button>
+
+<p id="addItem">Plastic +1</p>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
 <script type="text/javascript">
@@ -243,7 +271,9 @@ function delay(time) {
 		msg.text = "hallo plastic "+ plastic;
 		window.speechSynthesis.speak(msg);
 		plasticWait = 2;
+		document.getElementById("addItem").innerHTML = "Plastic + 1";
 		    await delay(2000);
+		 document.getElementById("addItem").innerHTML = "";
 		prediction[1].probability = 0;
 		plasticWait = 1;
             }
@@ -254,7 +284,9 @@ function delay(time) {
 		msg.text = "hallo paper "+ paper;
 		window.speechSynthesis.speak(msg);
 		paperWait = 2;
+		document.getElementById("addItem").innerHTML = "Paper + 1";
 		await delay(2000);
+		document.getElementById("addItem").innerHTML = "";
 		prediction[2].probability = 0;
 		paperWait = 1;
             } 
