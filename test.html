@@ -222,18 +222,16 @@ function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
 		
-	if (plasticWait == 1){
 		
-            if(prediction[1].probability.toFixed(2) > 0.8){
+            if(prediction[1].probability.toFixed(2) > 0.8 && plasticWait == 1){
                 console.log("bottle 80 more");
 		plastic = plastic + 1;
 		msg.text = "hallo plastic "+ plastic;
 		window.speechSynthesis.speak(msg);
 		plasticWait = 2;
-		    await delay(1000);
+		    await delay(2000);
 		    plasticWait = 1;
             }
-	}
 		
 	
 		
