@@ -54,6 +54,12 @@
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
+            
+            if(prediction[1].probability.toFixed(2) > 0.8){
+                console.log("bottle 80 more");
+            }
         }
     }
+    
+    
 </script>
