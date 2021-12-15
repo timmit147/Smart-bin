@@ -220,6 +220,9 @@ document.getElementById('paper').onclick = function(){
             
             if(prediction[1].probability.toFixed(2) > 0.8){
                 console.log("bottle 80 more");
+		plastic = plastic + 1;
+		msg.text = "hallo plastic "+ plastic;
+		window.speechSynthesis.speak(msg);    
             }
         }
     }
