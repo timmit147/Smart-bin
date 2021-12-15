@@ -26,6 +26,7 @@ var plastic = 0;
 var bread = 0;
 var paper = 0;
 var plasticWait = 1;
+var paperWait = 1;
 var transcript = "test";
 
 
@@ -231,6 +232,16 @@ function delay(time) {
 		plasticWait = 2;
 		    await delay(2000);
 		    plasticWait = 1;
+            }
+		
+		if(prediction[2].probability.toFixed(2) > 0.8 && paperWait == 1){
+                console.log("paper 80 more");
+		paper = paper + 1;
+		msg.text = "hallo paper "+ paper;
+		window.speechSynthesis.speak(msg);
+		paperWait = 2;
+		await delay(2000);
+		paperWait = 1;
             }
 		
 	
