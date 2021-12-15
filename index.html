@@ -224,8 +224,8 @@ function delay(time) {
 }
 		
 		
-            if(prediction[1].probability.toFixed(2) > 0.8 && plasticWait == 1){
-                console.log("bottle 80 more");
+            if(prediction[1].probability.toFixed(2) > 0.99 && plasticWait == 1){
+                console.log("bottle 99 more");
 		plastic = plastic + 1;
 		msg.text = "hallo plastic "+ plastic;
 		window.speechSynthesis.speak(msg);
@@ -234,8 +234,8 @@ function delay(time) {
 		    plasticWait = 1;
             }
 		
-		if(prediction[2].probability.toFixed(2) > 0.95 && paperWait == 1){
-                console.log("paper 95 more");
+		if(prediction[2].probability.toFixed(2) > 0.99 && paperWait == 1){
+                console.log("paper 99 more");
 		paper = paper + 1;
 		msg.text = "hallo paper "+ paper;
 		window.speechSynthesis.speak(msg);
