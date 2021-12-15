@@ -231,7 +231,7 @@ function delay(time) {
 		window.speechSynthesis.speak(msg);
 		plasticWait = 2;
 		    await delay(2000);
-		webcam.update();
+		prediction[1].probability = 0;
 		plasticWait = 1;
             }
 		
@@ -242,7 +242,7 @@ function delay(time) {
 		window.speechSynthesis.speak(msg);
 		paperWait = 2;
 		await delay(2000);
-		webcam.update();
+		prediction[2].probability = 0;
 		paperWait = 1;
             } 
 		
