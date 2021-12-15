@@ -114,21 +114,23 @@ setInterval(function(){
 	window.speechSynthesis.speak(msg);
 	transcript = "nothing";
 	}
-
-
-
-}, 1000);
 	
 	if (plastic == 2){
 		msg.text = "Hallo when you buy a reusable bottle instead of a plastic bottle, you can save 50 euros a year. Do you want to buy this product say yes";
 		window.speechSynthesis.speak(msg);
 	}
 	
-	if (paper == 2){
+	if (paper == 3){
 		msg.text = "Hallo Did you know that if you buy a I reader, instead of paper you save 500 euro a year.";
 		window.speechSynthesis.speak(msg);
 		bread = bread + 1;
 	}
+
+
+
+}, 1000);
+	
+
 
 
 document.getElementById('plastic').onclick = function(){
