@@ -25,8 +25,7 @@ msg.rate = 0.7;
 var plastic = 0;
 var bread = 0;
 var paper = 0;
-var plasticWait = true;
-
+var plasticWait = 1;
 var transcript = "test";
 
 
@@ -223,16 +222,16 @@ function delay(time) {
   return new Promise(resolve => setTimeout(resolve, time));
 }
 		
-	if (plasticWait == true){
+	if (plasticWait == 1){
 		
             if(prediction[1].probability.toFixed(2) > 0.8){
                 console.log("bottle 80 more");
 		plastic = plastic + 1;
 		msg.text = "hallo plastic "+ plastic;
 		window.speechSynthesis.speak(msg);
-		plasticWait = false;
+		plasticWait = 2;
 		    await delay(1000);
-		    plasticWait = true;
+		    plasticWait = 1;
             }
 	}
 		
