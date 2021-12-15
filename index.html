@@ -234,8 +234,8 @@ function delay(time) {
 		    plasticWait = 1;
             }
 		
-		if(prediction[2].probability.toFixed(2) > 0.8 && paperWait == 1){
-                console.log("paper 80 more");
+		if(prediction[2].probability.toFixed(2) > 0.95 && paperWait == 1){
+                console.log("paper 95 more");
 		paper = paper + 1;
 		msg.text = "hallo paper "+ paper;
 		window.speechSynthesis.speak(msg);
