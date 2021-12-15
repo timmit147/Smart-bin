@@ -94,6 +94,30 @@ document.getElementById('start').onclick = function(){
 	};
 	recognition.start();
 }
+	
+	
+	function talk(){
+	var recognition = new window.webkitSpeechRecognition();
+	recognition.lang = 'en-US';
+
+	recognition.continuous = true;
+	 recognition.interimResults = false;
+	 recognition.maxAlternatives = 1;
+
+	// This will run when the speech recognition service returns a result
+	recognition.onstart = function() {
+	console.log("Voice recognition started. Try speaking into the microphone.");
+	};
+
+	var i = 0;
+
+	recognition.onresult = function(event) {
+	transcript = event.results[i][0].transcript;
+	i = i + 1;
+	console.log(transcript);
+	};
+	recognition.start();
+}
 
 // code every second
 setInterval(function(){ 
@@ -220,6 +244,7 @@ document.getElementById('paper').onclick = function(){
 
     // Load the image model and setup the webcam
     async function init() {
+	 talk();
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
