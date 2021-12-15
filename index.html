@@ -30,7 +30,7 @@
 
 <button type="button" onclick="init()">Start</button>
 
-<p id="addItem">Plastic +1</p>
+<p id="addItem"></p>
 
 
 
@@ -143,16 +143,16 @@ setInterval(function(){
 	transcript = "nothing";
 	}
 	
-	if (plastic == 2){
-		msg.text = "Hallo when you buy a reusable bottle instead of a plastic bottle, you can save 50 euros a year. Do you want to buy this product say yes";
-		window.speechSynthesis.speak(msg);
-	}
+	// if (plastic == 2){
+	// 	msg.text = "Hallo when you buy a reusable bottle instead of a plastic bottle, you can save 50 euros a year. Do you want to buy this product say yes";
+	// 	window.speechSynthesis.speak(msg);
+	// }
 	
-	if (paper == 3){
-		msg.text = "Hallo Did you know that if you buy a I reader, instead of paper you save 500 euro a year.";
-		window.speechSynthesis.speak(msg);
-		bread = bread + 1;
-	}
+	// if (paper == 3){
+	// 	msg.text = "Hallo Did you know that if you buy a I reader, instead of paper you save 500 euro a year.";
+	// 	window.speechSynthesis.speak(msg);
+	// 	bread = bread + 1;
+	// }
 
 
 
@@ -271,7 +271,7 @@ function delay(time) {
 		msg.text = "hallo plastic "+ plastic;
 		window.speechSynthesis.speak(msg);
 		plasticWait = 2;
-		document.getElementById("addItem").innerHTML = "Plastic + 1";
+		document.getElementById("addItem").innerHTML = "Plastic " + plastic;
 		    await delay(2000);
 		 document.getElementById("addItem").innerHTML = "";
 		prediction[1].probability = 0;
@@ -284,7 +284,7 @@ function delay(time) {
 		msg.text = "hallo paper "+ paper;
 		window.speechSynthesis.speak(msg);
 		paperWait = 2;
-		document.getElementById("addItem").innerHTML = "Paper + 1";
+		document.getElementById("addItem").innerHTML = "Paper " + paper;
 		await delay(2000);
 		document.getElementById("addItem").innerHTML = "";
 		prediction[2].probability = 0;
