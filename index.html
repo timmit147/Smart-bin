@@ -231,7 +231,8 @@ function delay(time) {
 		window.speechSynthesis.speak(msg);
 		plasticWait = 2;
 		    await delay(2000);
-		    plasticWait = 1;
+		webcam.update();
+		plasticWait = 1;
             }
 		
 		if(prediction[2].probability.toFixed(2) > 0.99 && paperWait == 1){
@@ -241,6 +242,7 @@ function delay(time) {
 		window.speechSynthesis.speak(msg);
 		paperWait = 2;
 		await delay(2000);
+		webcam.update();
 		paperWait = 1;
             } 
 		
