@@ -1,5 +1,9 @@
 <div>Teachable Machine Image Model</div>
 <button type="button" onclick="init()">Start</button>
+	<button id="start">Start</button>
+	<button id="plastic">plastic +1</button>
+	<button id="bread">bread +1</button>
+	<button id="paper">paper +1</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -8,6 +12,165 @@
     // More API functions here:
     // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
 
+    
+    
+    
+// Variablen 
+var msg = new SpeechSynthesisUtterance();
+var voices = window.speechSynthesis.getVoices();
+msg.voice = voices[3]; 
+msg.lang = 'en-US';
+msg.rate = 0.7;
+
+var plastic = 0;
+var bread = 0;
+var paper = 0;
+
+var transcript = "test";
+
+
+// Check if speechSynthesis works
+if ('speechSynthesis' in window) {
+	console.log("Speech Synthesis supported 🎉");
+		 // Speech Synthesis supported 🎉
+}
+else{
+	console.log("Speech Synthesis Not Supported 😣");
+  // Speech Synthesis Not Supported 😣
+}
+
+
+
+// Allow voice recognition
+// new speech recognition object
+document.getElementById('start').onclick = function(){
+	var recognition = new window.webkitSpeechRecognition();
+	recognition.lang = 'en-US';
+
+	recognition.continuous = true;
+	 recognition.interimResults = false;
+	 recognition.maxAlternatives = 1;
+
+	// This will run when the speech recognition service returns a result
+	recognition.onstart = function() {
+	console.log("Voice recognition started. Try speaking into the microphone.");
+	};
+
+	var i = 0;
+
+	recognition.onresult = function(event) {
+	transcript = event.results[i][0].transcript;
+	i = i + 1;
+	console.log(transcript);
+	};
+	recognition.start();
+}
+
+// code every second
+setInterval(function(){ 
+    if(transcript == " reset"){
+	console.log("reseting");
+	plastic = 0;
+	bread = 0;
+	paper = 0;
+	msg.text = "Hallo We have restarted the settings";
+	window.speechSynthesis.speak(msg);
+	transcript = "nothing";
+	}
+
+	if(transcript == " sing"){
+	console.log("Singing");
+	msg.text = "Hallo We wish, you a, merry Christmas. We wish, you a merry, Christmas. We wish, you a merry, Christmas, and a, happy, new year.";
+	window.speechSynthesis.speak(msg);
+	transcript = "nothing";
+	}
+
+	if(transcript == " info"){
+	console.log("Info");
+	msg.text = "Hallo If you want to know the amounth of trash, ask show. If you want to know how this project works ask explain. If you want to know how to scan an product ask scan";
+	window.speechSynthesis.speak(msg);
+	transcript = "nothing";
+	}
+
+	if(transcript == " show"){
+	console.log("Amouth of trash");
+	msg.text = "hallo plastic" + plastic + " bread" + bread + " paper" + paper ;
+	window.speechSynthesis.speak(msg);
+	transcript = "nothing";
+	}
+
+
+	if(transcript == " scan"){
+	console.log("How to scan");
+	msg.text = "Hallo Hold a product infront of the camera, and wait till the product is added to your trash." ;
+	window.speechSynthesis.speak(msg);
+	transcript = "nothing";
+	}
+
+	if(transcript == " explain"){
+	console.log("Explain");
+	msg.text = "Hallo The smart trash can keeps track of how much trash you throw away. the goal with getting this data is to change the users behavior. This trash bin can gives advice how to make less trash.";
+	window.speechSynthesis.speak(msg);
+	transcript = "nothing";
+	}
+
+
+
+}, 1000);
+
+
+document.getElementById('plastic').onclick = function(){
+	if (plastic == 2){
+		msg.text = "Hallo when you buy a reusable bottle instead of a plastic bottle, you can save 50 euros a year. Do you want to buy this product say yes";
+		window.speechSynthesis.speak(msg);
+
+
+	var myVar = setInterval(myTimer, 1000);
+
+	function myTimer() {
+		if(transcript == " yes"){
+		msg.text = "Hallo We have bought the item online. have a great day";
+		window.speechSynthesis.speak(msg);
+		clearInterval(myVar);
+		}
+		if(transcript == " no"){
+		msg.text = "Hallo Have a great day";
+		window.speechSynthesis.speak(msg);
+		clearInterval(myVar);
+		}
+	}
+
+		plastic = plastic + 1;
+		return;
+	}
+	plastic = plastic + 1;
+	msg.text = "hallo plastic "+ plastic;
+	window.speechSynthesis.speak(msg);
+}
+
+document.getElementById('bread').onclick = function(){
+	if (bread == 2){
+		msg.text = "Hallo Did you know that if you freeze bread, you save 40% of your bread you trow away.";
+		window.speechSynthesis.speak(msg);
+		bread = bread + 1;
+	}
+	else{
+	bread = bread + 1;
+	msg.text = "hallo bread "+ bread;
+	window.speechSynthesis.speak(msg);
+	}
+}
+
+document.getElementById('paper').onclick = function(){
+	paper = paper + 1;
+	msg.text = "hallo paper "+ paper;
+	window.speechSynthesis.speak(msg);
+}
+    
+    
+    
+    
+    
     // the link to your model provided by Teachable Machine export panel
     const URL = "./model/";
 
