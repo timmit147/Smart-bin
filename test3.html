@@ -219,7 +219,7 @@ return new Promise(resolve => setTimeout(resolve, time));
 }
 
 
-        if(prediction[1].probability.toFixed(2) > 0.99 && plasticWait == 1){
+        if(prediction[1].probability.toFixed(2) > 0.95 && plasticWait == 1){
             const audio = new Audio('./beeb.mp3');
 audio.play();
 plastic = plastic + 1;
