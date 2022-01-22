@@ -10,9 +10,8 @@ display: none;
 #addItem {
 position: absolute;
 top: 40%;
-left: 50%;
-margin-right: -50%;
-transform: translate(-50%, -50%);
+right: 0%;
+transform: translate(-50%, -0%);
 font-size: 6vw;
 }
 canvas {
@@ -107,7 +106,7 @@ console.log("Info");
 msg.text = "Hallo If you want to know the amounth of trash, ask show. If you want to know how this project works ask explain. If you want to know how to scan an product ask scan";
 window.speechSynthesis.speak(msg);
 }
-if(transcriptNew == " Show"){
+if((transcriptNew == " Show") || (transcriptNew == " trash")){
 transcriptNew = "nothing";
 console.log("Amouth of trash");
 msg.text = "hallo plastic" + plastic + " bread" + bread + " paper" + paper ;
@@ -119,10 +118,20 @@ console.log("How to scan");
 msg.text = "Hallo Hold a product infront of the camera, and wait till the product is added to your trash." ;
 window.speechSynthesis.speak(msg);
 }
+if((transcriptNew == " hi") || (transcriptNew == " hallo")){
+transcriptNew = "nothing";
+msg.text = "Hallo hi if you need help say info." ;
+window.speechSynthesis.speak(msg);
+}
 if(transcriptNew == " Explain"){
 transcriptNew = "nothing";
 console.log("Explain");
 msg.text = "Hallo The smart trash can keeps track of how much trash you throw away. the goal with getting this data is to change the users behavior. This trash bin can gives advice how to make less trash.";
+window.speechSynthesis.speak(msg);
+}
+if(transcriptNew == " Challange"){
+transcriptNew = "nothing";
+msg.text = "Hallo the challange you have right now. is using a reusable bottle. instead of a plastic bottle. day 20 of 30 completed";
 window.speechSynthesis.speak(msg);
 }
 }
