@@ -133,7 +133,7 @@ transcriptNew = "nothing";
 msg.text = "Hallo you can trow away plastic bottles. news papers. and old bread";
 window.speechSynthesis.speak(msg);
 }
-if((transcriptNew == " Why do I need to use this") || (transcriptNew == " Why do I Need To Use Products") || (transcriptNew == " Why do I Need To Use Product") || (transcriptNew == " What is the purpose of this project")){
+if((transcriptNew == " Why do I need to use this") || (transcriptNew == " Why do I Need To Use Products") || (transcriptNew == " What is the purpose of this project")){
 transcriptNew = "nothing";
 msg.text = "Hallo if you buy this product you help making less trash in the world.";
 window.speechSynthesis.speak(msg);
@@ -150,7 +150,17 @@ window.speechSynthesis.speak(msg);
 }
 if((transcriptNew == " Why de stickers") || (transcriptNew == " what is the purpose of the stickers") || (transcriptNew == " stickers")){
 transcriptNew = "nothing";
-msg.text = "Hallo the stickers are a price for completing a monthly challenge. Red stickers 50% waste. Orange stickers 30% waste. Yellow stickers 10% waste. Green stickers 0% waste.";
+msg.text = "Hallo the stickers are a price for completing a monthly challenge. Red stickers 50% less waste. Orange stickers 30% less waste. Yellow stickers 10% less waste. Green stickers 0 waste.";
+window.speechSynthesis.speak(msg);
+}
+if(transcriptNew == " yes"){
+transcriptNew = "nothing";
+msg.text = "Hallo item is added to your shopping list";
+window.speechSynthesis.speak(msg);
+}
+if((transcriptNew == "  remove project") || (transcriptNew == "  remove item")){
+transcriptNew = "nothing";
+msg.text = "Hallo item is removed from your shopping list";
 window.speechSynthesis.speak(msg);
 }
 }
