@@ -9,9 +9,8 @@ display: none;
 }
 #addItem {
 position: absolute;
-top: 40%;
-right: 0%;
-transform: translate(-50%, -0%);
+top: 0%;
+right: 10%;
 font-size: 6vw;
 }
 canvas {
@@ -144,6 +143,16 @@ transcriptNew = "nothing";
 msg.text = "Hallo the price is between 130 and 150 euros";
 window.speechSynthesis.speak(msg);
 }
+if((transcriptNew == " Joke") || (transcriptNew == " tell a joke")){
+transcriptNew = "nothing";
+msg.text = "Hallo What Do You Call a Broken Dumpster?. A Trash Can't.";
+window.speechSynthesis.speak(msg);
+}
+if((transcriptNew == " Why de stickers") || (transcriptNew == " what is the purpose of the stickers") || (transcriptNew == " stickers")){
+transcriptNew = "nothing";
+msg.text = "Hallo the stickers are a price for completing a monthly challenge. Red stickers 50% waste. Orange stickers 30% waste. Yellow stickers 10% waste. Green stickers 0% waste.";
+window.speechSynthesis.speak(msg);
+}
 }
 // This is the code to reconize the trash
 //////////////
@@ -198,7 +207,7 @@ plastic = plastic + 1;
 plasticWait = 2;
 document.getElementById("addItem").innerHTML = "Plastic " + plastic;
 if (plastic == 2){
-msg.text = "Hallo when you buy a reusable bottle instead of a plastic bottle, you can save 50 euros a year.";
+msg.text = "Hallo when you buy a reusable bottle instead of a plastic bottle, you can save 50 euros a year. Do you want to buy this product say yes";
 window.speechSynthesis.speak(msg);
 }
 await delay(2000);
@@ -213,7 +222,7 @@ paper = paper + 1;
 paperWait = 2;
 document.getElementById("addItem").innerHTML = "Paper " + paper;
 if (paper == 3){
-msg.text = "Hallo Did you know that if you buy a I reader, instead of paper you save 500 euro a year.";
+msg.text = "Hallo Did you know that if you buy a I reader, instead of paper you save 200 euros a year. Do you want to buy this product say yes";
 window.speechSynthesis.speak(msg);
 bread = bread + 1;
 }
