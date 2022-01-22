@@ -94,19 +94,19 @@ paper = 0;
 msg.text = "Hallo We have restarted the settings";
 window.speechSynthesis.speak(msg);
 }
-if((transcriptNew == " sing") || (transcriptNew == " zing")){
+if((transcriptNew == " sing") || (transcriptNew == " zing")|| (transcriptNew == " Can you sing")){
 transcriptNew = "nothing";
 console.log("Singing");
 msg.text = "Hallo We wish, you a, merry Christmas. We wish, you a merry, Christmas. We wish, you a merry, Christmas, and a, happy, new year.";
 window.speechSynthesis.speak(msg);
 }
-if((transcriptNew == " info") || (transcriptNew == " help") || (transcriptNew == " what can you do") || (transcriptNew == " What can you do")){
+if((transcriptNew == " info") || (transcriptNew == " help") || (transcriptNew == " what can you do") || (transcriptNew == " What can you do") || (transcriptNew == " Smart bin") || (transcriptNew == " I need help") ){
 transcriptNew = "nothing";
 console.log("Info");
 msg.text = "Hallo If you want to know the amounth of trash, ask show. If you want to know how this project works ask explain. If you want to know how to scan an product ask scan";
 window.speechSynthesis.speak(msg);
 }
-if((transcriptNew == " Show") || (transcriptNew == " trash")){
+if((transcriptNew == " Show") || (transcriptNew == " trash")|| (transcriptNew == " How mutch trash") || (transcriptNew == " How mutch trash did i trow a way") || (transcriptNew == " how much did I Throw away")){
 transcriptNew = "nothing";
 console.log("Amouth of trash");
 msg.text = "hallo plastic" + plastic + " bread" + bread + " paper" + paper ;
@@ -118,18 +118,13 @@ console.log("How to scan");
 msg.text = "Hallo Hold a product infront of the camera, and wait till the product is added to your trash." ;
 window.speechSynthesis.speak(msg);
 }
-if((transcriptNew == " hi") || (transcriptNew == " hallo")){
-transcriptNew = "nothing";
-msg.text = "Hallo hi if you need help say info." ;
-window.speechSynthesis.speak(msg);
-}
-if(transcriptNew == " Explain"){
+if((transcriptNew == " Explain") || (transcriptNew == " How does this work")|| (transcriptNew == " What is this")){
 transcriptNew = "nothing";
 console.log("Explain");
-msg.text = "Hallo The smart trash can keeps track of how much trash you throw away. the goal with getting this data is to change the users behavior. This trash bin can gives advice how to make less trash.";
+msg.text = "Hallo The smart trash can keeps track of how much trash you throw away. the goal with getting this data is to change the users behavior. This trash bin can gives advice how to make less trash. If you want to know more say info.";
 window.speechSynthesis.speak(msg);
 }
-if(transcriptNew == " Challange"){
+if((transcriptNew == " challenge") || (transcriptNew == " Challenge")){
 transcriptNew = "nothing";
 msg.text = "Hallo the challange you have right now. is using a reusable bottle. instead of a plastic bottle. day 20 of 30 completed";
 window.speechSynthesis.speak(msg);
