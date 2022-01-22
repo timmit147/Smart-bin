@@ -112,7 +112,7 @@ console.log("Amouth of trash");
 msg.text = "hallo plastic" + plastic + " bread" + bread + " paper" + paper ;
 window.speechSynthesis.speak(msg);
 }
-if(transcriptNew == " scan"){
+if((transcriptNew == " scan") || (transcriptNew == " How to scan")){
 transcriptNew = "nothing";
 console.log("How to scan");
 msg.text = "Hallo Hold a product infront of the camera, and wait till the product is added to your trash." ;
@@ -127,6 +127,21 @@ window.speechSynthesis.speak(msg);
 if((transcriptNew == " challenge") || (transcriptNew == " Challenge")){
 transcriptNew = "nothing";
 msg.text = "Hallo the challange you have right now. is using a reusable bottle. instead of a plastic bottle. day 20 of 30 completed";
+window.speechSynthesis.speak(msg);
+}
+if((transcriptNew == " What can I Throw away") || (transcriptNew == " Which items Can I Go away")){
+transcriptNew = "nothing";
+msg.text = "Hallo you can trow away plastic bottles. news papers. and old bread";
+window.speechSynthesis.speak(msg);
+}
+if((transcriptNew == " Why do I need to use this") || (transcriptNew == " Why do I Need To Use Products") || (transcriptNew == " Why do I Need To Use Product") || (transcriptNew == " What is the purpose of this project")){
+transcriptNew = "nothing";
+msg.text = "Hallo if you buy this product you help making less trash in the world.";
+window.speechSynthesis.speak(msg);
+}
+if((transcriptNew == " What does this project Cost") || (transcriptNew == " What's the price") || (transcriptNew == " What is the price") || (transcriptNew == " How much does this cast") || (transcriptNew == " Price") || (transcriptNew == " can I buy It")){
+transcriptNew = "nothing";
+msg.text = "Hallo the price is between 130 and 150 euros";
 window.speechSynthesis.speak(msg);
 }
 }
